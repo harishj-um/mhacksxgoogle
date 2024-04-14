@@ -26,7 +26,7 @@ type SectionProps = PropsWithChildren<{
 
 function App(): React.JSX.Element {
   const backgroundStyle = {
-    backgroundColor: Colors.lighter,
+    backgroundColor: Colors.darker,
   };
   return (
     <SafeAreaView style={backgroundStyle}>

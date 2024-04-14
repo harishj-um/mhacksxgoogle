@@ -7,6 +7,39 @@ import { Colors, DebugInstructions, Header, LearnMoreLinks, ReloadInstructions }
 const InputBar = () => {
   const [currentInput, setCurrentInput] = useState("empty");
   const [textInput, setTextInput] = useState("");
+  const [responseText, setResponseText] = useState("");
+
+  const handleSubmit = async () => {
+    console.log(textInput);
+    const ipAddressResponse = await fetch('https://api.ipify.org?format=json');
+    const ipAddressData = await ipAddressResponse.json();
+    const clientIP = ipAddressData.ip;
+    console.log("Client IP:", clientIP);
+    try {
+      // Send the text input value to the REST API
+      const response = await fetch('/textToText', {
+        method: 'POST',
+        credentials: "same-origin",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ text: textInput })
+      });
+      if (response.ok) {
+        // Handle the successful response from the REST API
+        const data = await response.json();
+        setResponseText(data); // Assuming `data` contains the response text
+      } else {
+        // Handle the error response from the REST API
+        console.error("API error:", response.status);
+        setResponseText("Error: " + response.status); // Set the response text to display the error status
+      }
+    } catch (error) {
+      // Handle any network or other errors
+      console.error("Error:", error);
+      setResponseText("Error: " + error); // Set the response text to display the error message
+    }
+  };
 
   return (
     <View style={styles.input}>
@@ -27,6 +60,8 @@ const InputBar = () => {
             }}
           />
           <Text>{textInput}</Text>
+          <Button title="Submit" onPress={handleSubmit} />
+          {responseText && <Text>{responseText}</Text>}
         </View>
       )}
 
