@@ -2,25 +2,41 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: 'lightgreen',
-    height: 50,
+    backgroundColor: '#A4C2A4', // Forest green
+    height: 80,
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
+    borderRadius: 10,
   },
   headerText: {
-    fontSize: 20,
+    fontSize: 50,
+    fontFamily: 'Poppins-Bold', // Modern font
+    color: '#333', // Dark brown
+  },
+  taglineContainer: {
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10,
   },
   tagline: {
-    fontSize: 20,
+    fontSize: 30,
+    justifyContent: 'center',
+    alignContent: 'center',
+    fontFamily: 'Poppins-SemiBold', // Modern font
+    color: '#333', // Dark brown
   },
   bubble: {
-    backgroundColor: 'lightcoral',
+    backgroundColor: '#F2E8CF', // Light beige
     borderRadius: 10,
     padding: 10,
-    borderWidth: 2,
-    borderColor: 'darkred',
-    margin: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+    elevation: 2,
+    marginHorizontal: 30,
   },
   input: {
     flexDirection: 'row',
@@ -29,26 +45,29 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   body: {
-    backgroundColor: 'lightblue',
+    backgroundColor: '#F0FFF0', // Light green
     height: 500,
     justifyContent: 'center',
     alignItems: 'center',
   },
   footer: {
-    backgroundColor: 'lightgreen',
+    backgroundColor: '#A4C2A4', // Forest green
     height: 70,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    position: "absolute",
+    position: 'absolute',
     bottom: 0,
+    borderRadius: 30,
   },
   textInput: {
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: '#BDBDBD', // Light gray
     width: 200,
     height: 40,
     margin: 10,
+    borderRadius: 5,
+    fontFamily: 'Poppins-Regular', // Modern font
   },
   textInputContainer: {
     marginTop: 20,
@@ -63,17 +82,29 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   userItem: {
-    backgroundColor: '#f0f0f0',
-    borderRadius: 5,
+    backgroundColor: '#F2E8CF', // Light beige
+    borderRadius: 10,
     padding: 10,
     marginBottom: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+    elevation: 2,
+    fontFamily: 'Poppins-Regular', // Modern font
   },
   responseItem: {
-    backgroundColor: '#e0e0ff',
-    borderRadius: 5,
+    backgroundColor: '#E0E0FF', // Light blue
+    borderRadius: 10,
     padding: 10,
     marginBottom: 10,
     alignSelf: 'flex-end',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+    elevation: 2,
+    fontFamily: 'Poppins-Regular', // Modern font
   },
 });
 

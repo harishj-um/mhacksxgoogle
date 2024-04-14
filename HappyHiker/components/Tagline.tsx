@@ -6,8 +6,8 @@ import { Colors, DebugInstructions, Header, LearnMoreLinks, ReloadInstructions }
 
 function Tagline(): React.JSX.Element {
   return (
-    <View>
-      <Text>Let us guide you!</Text>
+    <View style={styles.taglineContainer}>
+      <Text style={styles.tagline}>Let us guide you!</Text>
     </View>
   );
 }

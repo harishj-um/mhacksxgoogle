@@ -32,7 +32,7 @@ const InputBar = () => {
           { text: textInput, isResponse: false }, // User input
           { text: data["response"], isResponse: true }, // API response
         ]);
-        setTextInput(""); // Clear text input after successful submission
+        setTextInput("clear"); // Clear text input after successful submission
       } else {
         // Handle the error response from the REST API
         console.log("Response not Ok");
@@ -68,13 +68,13 @@ const InputBar = () => {
           />
           <Button title="Submit" onPress={handleSubmit} />
           {responseText === "" && <ActivityIndicator />}
-          {responseText && <Text>{responseText}</Text>}
+          {responseText && <Text style={styles.responseItem}>{responseText}</Text>}
         </View>
       )}
 
       {currentInput === "voice" && (
         <View>
-          <Text> In Here wowie</Text>
+          <Text> Voice Support Coming Soon! </Text>
         </View>
       )}
 

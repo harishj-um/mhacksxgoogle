@@ -6,7 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './screens/Home.tsx';
 import About from './screens/About.tsx';
 import Location from './screens/Location.tsx';
-import Settings from './screens/Settings.tsx';
+import Emergency from './screens/Emergency.tsx';
 import ChatHistory from './screens/ChatHistory';
 
 const homeName = 'Home';
@@ -53,7 +53,7 @@ export default function MainContainer() {
                 })}
             >
                 <Tab.Screen name={chatHistoryName} component={ChatHistory} />
-                <Tab.Screen name={emergencyName} component={Settings} />
+                <Tab.Screen name={emergencyName} component={Emergency} />
                 <Tab.Screen name={homeName} component={Home} />
                 <Tab.Screen name={locationName} component={Location} />
                 <Tab.Screen name={aboutName} component={About} />

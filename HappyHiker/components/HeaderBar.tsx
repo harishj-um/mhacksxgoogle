@@ -1,22 +1,29 @@
-import React from 'react';
-import styles from '../styles.tsx';
-import { PropsWithChildren, useState, useEffect } from 'react';
-import { Button, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View, Image } from 'react-native';
-import { Colors, DebugInstructions, Header, LearnMoreLinks, ReloadInstructions } from 'react-native/Libraries/NewAppScreen';
+import React, { useState } from 'react';
+import { Image, TouchableOpacity, View, Text } from 'react-native';
+import styles from '../styles';
 
-function HeaderBar(): React.JSX.Element {
-  var isDarkMode = true;
+const HeaderBar = () => {
+  const [isDark, setIsDark] = useState(true); // Initial theme state
+
+  const handleThemeToggle = () => {
+    setIsDark(!isDark); // Toggle theme state directly
+  };
+
+  const imageSource = isDark ? require('../images/moon.png') : require('../images/sun.png');
+
   return (
     <View style={styles.header}>
-      <Image 
-        style={{width: 50, height: 50}}
-        source={isDarkMode ? require('../images/moon.png') : require('../images/sun.png')}
-        resizeMode={'contain'}
-      />
-      <Text style={styles.headerText}>Happy Hiker</Text>
+      <TouchableOpacity onPress={handleThemeToggle}>
+        <Image
+          style={{ width: 50, height: 50 }}
+          source={imageSource}
+          resizeMode={'contain'}
+        />
+      </TouchableOpacity>
+      <Text style={styles.headerText}> Happy Hiker </Text>
       <Image source={require('../images/settings.png')} />
     </View>
   );
-}
+};
 
 export default HeaderBar;
