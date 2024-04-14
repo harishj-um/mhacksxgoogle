@@ -63,8 +63,8 @@ const styles = StyleSheet.create({
   textInput: {
     borderWidth: 1,
     borderColor: '#BDBDBD', // Light gray
-    width: 200,
-    height: 40,
+    width: 400,
+    height: 50,
     margin: 10,
     borderRadius: 5,
     fontFamily: 'Poppins-Regular', // Modern font

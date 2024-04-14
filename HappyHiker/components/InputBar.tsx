@@ -8,6 +8,46 @@ const InputBar = () => {
   const [chatHistory, setChatHistory] = useState<{ text: string; isResponse: boolean }[]>([]);
   const [responseText, setResponseText] = useState("");
 
+  // const handleSubmit = async () => {
+  //   console.log(textInput);
+  //   try {
+  //     // Send the text input value to the REST API
+  //     const response = await fetch('http://10.0.2.2:5000/textToText', {
+  //       method: 'POST',
+  //       mode: "cors",
+  //       headers: {
+  //         'Content-Type': 'application/json'
+  //       },
+  //       body: JSON.stringify({ text: textInput })
+  //     });
+  //     console.log("Response:" + response);
+  //     if (response.ok) {
+  //       // Handle the successful response from the REST API
+  //       console.log("Response Ok");
+  //       const data = await response.json();
+  //       console.log("Data: " + data);
+  //       setResponseText(data["response"]);
+  //       setChatHistory([
+  //         ...chatHistory,
+  //         { text: textInput, isResponse: false }, // User input
+  //         { text: data["response"], isResponse: true }, // API response
+  //       ]);
+  //       setTextInput("clear"); // Clear text input after successful submission
+  //     } else {
+  //       // Handle the error response from the REST API
+  //       console.log("Response not Ok");
+  //       console.error("API error:", response.status);
+  //       setResponseText("Error: " + response.status); // Set the response text to display the error status
+  //     }
+  //   } catch (error) {
+  //     // Handle any network or other errors
+  //     console.log("Error Oh No");
+  //     console.error("Error:", error);
+  //     setResponseText("Error: " + error); // Set the response text to display the error message
+  //   }
+  //   console.log("Response Text: " + responseText);
+  // };
+
   const handleSubmit = async () => {
     console.log(textInput);
     try {
@@ -32,7 +72,7 @@ const InputBar = () => {
           { text: textInput, isResponse: false }, // User input
           { text: data["response"], isResponse: true }, // API response
         ]);
-        setTextInput("clear"); // Clear text input after successful submission
+        setTextInput(""); // Clear text input after successful submission
       } else {
         // Handle the error response from the REST API
         console.log("Response not Ok");
@@ -65,6 +105,7 @@ const InputBar = () => {
             style={styles.textInput}
             placeholder="Enter text"
             onChangeText={(text) => setTextInput(text)}
+            value={textInput} // Add value prop to bind the textInput state
           />
           <Button title="Submit" onPress={handleSubmit} />
           {responseText === "" && <ActivityIndicator />}
