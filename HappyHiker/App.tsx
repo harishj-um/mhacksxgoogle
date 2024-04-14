@@ -13,10 +13,8 @@ import InputBar from './components/InputBar.tsx';
 import { PropsWithChildren, useState, useEffect } from 'react';
 import { Button, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View, Image } from 'react-native';
 import { Colors, DebugInstructions, Header, LearnMoreLinks, ReloadInstructions } from 'react-native/Libraries/NewAppScreen';
+import MainContainer from './navigation/MainContainer.tsx';
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
 /**
  * Section component for Happy Hiker
  * @param children - the children of the component
@@ -25,19 +23,7 @@ type SectionProps = PropsWithChildren<{
  */
 
 function App(): React.JSX.Element {
-  const backgroundStyle = {
-    backgroundColor: Colors.darker,
-  };
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={'dark-content'} />
-      <HeaderBar />
-      <Tagline />
-      <Bubble text={'If you have an emergency, please alert 911 and local services immediately!'} />
-      <InputBar />
-      <Footer />
-    </SafeAreaView>
-  );
+  return <MainContainer />;
 }
 
 export default App;

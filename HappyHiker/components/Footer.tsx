@@ -7,7 +7,7 @@ import { Colors, DebugInstructions, Header, LearnMoreLinks, ReloadInstructions }
 function Footer(): React.JSX.Element {
     return (
         <View style={styles.footer}>
-            <Image source={require('../images/chathistory.png')} />
+            <Image source={require('../images/document.png')} />
             <Image source={require('../images/emergency.png')} />
             <Image source={require('../images/home.png')} />
             <Image source={require('../images/location.png')} />
